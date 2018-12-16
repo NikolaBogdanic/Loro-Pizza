@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>Sign In</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput type="email" placeholder="Email" ngModel name="email" #email="ngModel" email required>
+    <mat-hint *ngIf="!email.touched" align="start"><strong>We will send you an email with your personal sign in link</strong></mat-hint>
+    <mat-error *ngIf="email.touched && !email.valid && email.errors.required">
+      Email is required
+    </mat-error>
+    <mat-error *ngIf="email.touched && !email.valid && !email.errors.required && email.errors.email">
+      Please enter a valid email address
+    </mat-error>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions fxLayoutAlign="end">
+  <button
+    mat-raised-button
+    mat-dialog-close
+    color="accent"
+    [disabled]="!email.valid"
+    (click)="sendEmailLink(email.value)">
+    Send me a link
+  </button>
+</div>

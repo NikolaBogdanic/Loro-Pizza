@@ -1,0 +1,24 @@
+<div class="pizzas">
+    <div class="new-pizza-button-container">
+        <a routerLink="./new" class="new-pizza-button">
+            <button mat-raised-button color="accent">
+                New Pizza
+            </button>
+        </a>
+    </div>
+    <div class="pizzas-list" fxLayoutAlign="center center">
+        <div *ngIf="!(pizzas$ | async)?.length">
+            No pizzas, add one to get started.
+        </div>
+        <div *ngFor="let pizza of (pizzas$ | async)" class="background-color-primary-light pizza-item">
+            <app-pizza-display [pizza]="pizza" [toppingEntities]="toppingEntities$ | async" [width]="pizzaWidth">
+            </app-pizza-display>
+            <h2>{{ pizza.name }}</h2>
+            <a [routerLink]="['/pizzas', pizza.id]">
+                <button mat-raised-button color="accent">
+                    View Pizza
+                </button>
+            </a>
+        </div>
+    </div>
+</div>

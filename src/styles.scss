@@ -1,0 +1,34 @@
+@import '~normalize.css/normalize.css';
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.mat-form-field {
+    .mat-form-field-infix {
+        width: 270px;
+    }
+}
+
+h2, h4, h5 {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    color: #555555 !important;
+}
+
+h2, h4 {
+    letter-spacing: 1px;
+}
+
+.mat-snack-bar-container {
+    margin-bottom: 88px !important;
+}
+
+@media (max-width: 1023px) {
+    .mat-form-field {
+        .mat-form-field-infix {
+            width: 180px;
+        }
+    }
+}

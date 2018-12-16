@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+  <mat-toolbar-row>
+    <img src="/assets/images/loro-pizza-header-logo.svg" class="header-logo" alt="Loro Pizza Header Logo">
+    <span class="spacer"></span>
+    <ng-container *ngIf="!(user$ | async) && isValidateLinkPage">
+      <mat-progress-bar mode="buffer"></mat-progress-bar>
+    </ng-container>
+    <ng-container *ngIf="!(user$ | async) && !isValidateLinkPage">
+      <button mat-raised-button color="accent" (click)="openSignInDialog()">Sign In</button>
+    </ng-container>
+    <ng-container *ngIf="user$ | async">
+      <button mat-button (click)="navigateToPizzas()">Pizzas</button>
+      <button mat-button (click)="signOut()">Sign Out</button>
+    </ng-container>
+  </mat-toolbar-row>
+</mat-toolbar>

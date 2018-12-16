@@ -1,0 +1,63 @@
+@import "~@angular/material/theming";
+@include mat-core();
+$app-primary: mat-palette($mat-light-blue, A700);
+$app-accent : mat-palette($mat-amber, A400);
+$app-warn : mat-palette($mat-red, A400);
+$app-done : mat-palette($mat-green, A200);
+$app-warning : mat-palette($mat-orange, A400);
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+@include angular-material-theme($app-theme);
+
+$app-typography: mat-typography-config( 
+    $font-family: '"Roboto", "Helvetica Neue", sans serif'
+);
+@include angular-material-typography($app-typography);
+
+.light-text {
+  color: white;
+}
+.dark-text {
+  color: rgba(0, 0, 0, 0.87);
+}
+.color-primary {
+  color: mat-color($app-primary);
+}
+.color-accent {
+  color: mat-color($app-accent);
+}
+.color-warn {
+  color: mat-color($app-warn);
+}
+.color-done {
+  color: mat-color($app-done);
+}
+.color-warning {
+  color: mat-color($app-warning);
+}
+.color-error {
+  color: mat-color($app-warn);
+}
+.background-color-primary {
+  background-color: mat-color($app-primary);
+}
+.background-color-primary-light {
+  background-color: mat-color($app-primary, A100);
+}
+.background-color-accent {
+  background-color: mat-color($app-accent);
+}
+.background-color-warn {
+  background-color: mat-color($app-warn);
+}
+.background-color-done {
+  background-color: mat-color($app-done);
+}
+.background-color-warning {
+  background-color: mat-color($app-warning);
+}
+.background-color-error {
+  background-color: mat-color($app-warn);
+}
+.background-color-dark {
+  background-color: rgba(0, 0, 0, 0.87);
+}

@@ -1,0 +1,30 @@
+.toppings {
+  margin-bottom: 12px;
+  .topping {
+    cursor: pointer;
+    margin: 6px 24px;
+    img {
+      height: 40px;
+    }
+    .topping-name {
+      position: relative;
+    }
+    .mat-icon {
+      position: absolute;
+      top: -12px;
+      right: -18px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .toppings {
+    .topping {
+      margin: 6px 14px;
+      img {
+        height: 30px;
+      }
+    }
+  }
+}
+  

@@ -1,0 +1,18 @@
+<div
+  class="pizza"
+  fxLayout="column"
+  fxLayoutAlign="center center">
+  <app-pizza-form
+    [pizza]="pizza$ | async"
+    [toppings]="toppings$ | async"
+    (selected)="onSelect($event)"
+    (create)="onCreate($event)"
+    (update)="onUpdate($event)"
+    (remove)="onRemove($event)">
+    <app-pizza-display
+      [pizza]="visualizedPizza$ | async"
+      [toppingEntities]="toppingEntities$ | async"
+      [width]="pizzaWidth">
+    </app-pizza-display>
+  </app-pizza-form>
+</div>

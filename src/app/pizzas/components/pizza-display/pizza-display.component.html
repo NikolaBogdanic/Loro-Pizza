@@ -1,0 +1,15 @@
+<div 
+  class="pizza-display"
+  [ngStyle]="{
+    'width': width + 'px'
+  }">
+  <div class="pizza-display-base">
+    <img src="/assets/images/pizza.svg">
+    <img 
+      *ngFor="let toppingId of pizza?.toppingIds; index as i;"
+      src="/assets/images/toppings/{{ toppingEntities[toppingId].name }}.svg" 
+      [ngStyle]="{'z-index': toppingEntities[toppingId].name === 'tomato-sauce' ? '0' : i+1}"
+      class="pizza-display-topping"
+      @drop>
+  </div>
+</div>

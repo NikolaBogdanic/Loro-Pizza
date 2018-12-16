@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Delete confirmation</h1>
+<div mat-dialog-content>
+  <div class="message" fxLayoutAlign="start">
+    <mat-icon class="material-icon color-warning">warning</mat-icon>
+    <p>
+      Are you sure you want to delete the pizza "<span class="weight-500">{{ name }}</span>"?
+    </p>
+  </div>
+</div>
+<div mat-dialog-actions fxLayoutAlign="end">
+  <button mat-raised-button color="accent" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="warn" (click)="onDelete()" cdkFocusInitial>Delete</button>
+</div>

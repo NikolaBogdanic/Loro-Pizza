@@ -1,0 +1,14 @@
+.pizza-form {
+  padding: 24px;
+  .pizza-display-container {
+    margin: 12px 12px 24px 12px;
+    .pizza-display {
+      padding: 24px;
+      width: 300px;
+    }
+  }
+  &-list {
+    width: 100%;
+    max-width: 700px;
+  }
+}

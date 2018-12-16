@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>
+  {{ data.messageType }}
+</h1>
+<div mat-dialog-content>
+  <div class="message-container">
+    <mat-icon 
+      class="icon"
+      [ngClass]="{     
+        'color-done': data.messageType === 'done',
+        'color-warning': data.messageType === 'warning',
+        'color-error': data.messageType === 'error' }">
+      {{ data.messageType }}
+    </mat-icon>
+    <div class="message" [innerHtml]="data.message"></div>
+  </div>
+</div>
+<div mat-dialog-actions fxLayoutAlign="end">
+  <button mat-raised-button mat-dialog-close cdkFocusInitial color="accent">Ok</button>
+</div>

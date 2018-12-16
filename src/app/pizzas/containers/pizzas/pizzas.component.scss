@@ -1,0 +1,39 @@
+.pizzas {
+  position: relative;
+  padding: 12px;
+  .new-pizza-button-container {
+    text-align: center;
+    .new-pizza-button {
+      margin: 12px 12px 24px 12px;
+      display: inline-block;
+    }
+  }
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    .pizza-item {
+      text-align: center;
+      margin: 12px;
+      padding: 24px 72px;
+      border-radius: 2px;
+      background: #f5f5f5;
+      transition: 0.2s all ease;
+      &:hover {
+        transform: scale(1.03);
+      }
+      h2 {
+        padding-top: 9px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .pizzas {
+    &-list {
+      .pizza-item {
+        padding: 24px;
+      }
+    }
+  }
+}

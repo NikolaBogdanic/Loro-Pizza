@@ -1,0 +1,15 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center" class="toppings">
+  <div 
+    *ngFor="let topping of toppings;"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="6px"
+    (click)="selectTopping(topping.id)"
+    class="topping">
+    <img src="/assets/images/toppings/singles/{{ topping.name }}.svg">
+    <h5 class="topping-name">
+      {{ topping.displayName }}
+      <mat-icon *ngIf="existsInToppings(topping.id)" class="color-done">check_circle</mat-icon>
+    </h5>
+  </div>
+</div>

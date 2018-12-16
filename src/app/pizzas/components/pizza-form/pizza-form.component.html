@@ -1,0 +1,42 @@
+<div class="pizza-form">
+  <form [formGroup]="form" fxLayout="column"
+  fxLayoutAlign="center center">
+
+    <h2>{{ name.value === '' ? 'New pizza' : name.value }}</h2>
+    
+    <mat-form-field>
+      <input matInput type="text" placeholder="Pizza name" formControlName="name"/>
+      <mat-error *ngIf="name.hasError('required')">
+        Pizza name is required
+      </mat-error>
+    </mat-form-field>
+    
+    <div class="pizza-display-container">
+      <ng-content></ng-content>
+    </div>
+
+    <label>
+      <h4>Select toppings:</h4>
+    </label>
+    <div class="pizza-form-list">
+      <app-toppings
+        [toppings]="toppings"
+        (selectedTopping)="onSelectTopping($event)"
+        formControlName="toppingIds">
+      </app-toppings>
+    </div>
+
+    <div class="pizza-form-actions" fxLayoutGap="24px">
+      <button *ngIf="!exists" mat-raised-button color="accent" type="button" (click)="createPizza(form)">
+        Create Pizza
+      </button>
+      <button *ngIf="exists" mat-raised-button color="accent" type="button" (click)="updatePizza(form)">
+        Save changes
+      </button>
+      <button *ngIf="exists" mat-raised-button color="warn" type="button" (click)="removePizza(form)">
+        Delete Pizza
+      </button>
+    </div>
+
+  </form>
+</div>

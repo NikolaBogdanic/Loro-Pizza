@@ -1,6 +1,7 @@
-# Loro Pizza
-
-<img src="https://angular.club/assets/images/loro-pizza-header-logo.svg" style="width: 400px;">
+<p align="center">
+  <img src="https://angular.club/assets/images/loro-pizza-header-logo.svg" width="600px">
+</p>
+<br/>
 
 ## Getting Started
 

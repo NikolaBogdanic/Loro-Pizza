@@ -95,8 +95,9 @@ export class AuthState {
               email
             };
             const batch = this.afs.firestore.batch();
+            // Set your default pizzas if you would like to
             // Set default pizza 'Margherita'
-            const pizzaMargheritaRef = userDoc.collection('pizzas').ref.doc();
+            /* const pizzaMargheritaRef = userDoc.collection('pizzas').ref.doc();
             batch.set(pizzaMargheritaRef, {
               name: 'Margherita',
               timestamp: 1541370181990,
@@ -105,9 +106,9 @@ export class AuthState {
                 'JDeTD0gIqm1zknHCxjQM',
                 '5j1YGZQWI1rN9zQtj8RQ'
               ]
-            });
+            }); */
             // Set default pizza 'Pepperoni'
-            const pizzaPepperoniRef = userDoc.collection('pizzas').ref.doc();
+            /* const pizzaPepperoniRef = userDoc.collection('pizzas').ref.doc();
             batch.set(pizzaPepperoniRef, {
               name: 'Pepperoni',
               timestamp: 1541370181996,
@@ -116,7 +117,7 @@ export class AuthState {
                 'JDeTD0gIqm1zknHCxjQM',
                 '0HPayWAj0ztNCshzehPp'
               ]
-            });
+            }); */
             // Set user
             batch.set(userDoc.ref, user);
             // Execute all 'set' operations as a single batch
